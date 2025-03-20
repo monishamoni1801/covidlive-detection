@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- && Website info 
+    ================= -->
+    <title>Corona Tracker.js - Covid19 stats</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="S.R.">
+
+    <!-- && Mobile Meta (viewport)
+    ================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- && CSS files 
+    ================= -->
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/coronatracker.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css">
+    
+
+    <!-- && Favicon
+    ================= -->
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+
+    <!-- && IE support
+    ================= -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script type="text/javascript" src="js/corona-tracker.js" defer></script>
+    <script type="text/javascript" src="js/charts.js" defer></script>
+    
+    
+</head>
+<body>
+  <div class="base">
+    <div class="grid">
+        <div class="item span6 ac jc" id="logo">
+            <h1>Covid-19</h1>
+            <p>Statistics / Graphics</p>
+        </div>
+
+        <div class="item span6 jc ac">
+            <ul>
+                <li><a href="#">Global</a></li>
+                <li><a href="#">Continents</a></li>
+                <li>
+                    <form name="countrySearch" id="countrySearch">
+                        <input type="text" name="country" list="countries" onfocus="this.value=''" placeholder="Find a country..." required>
+                        <input type="submit" value="Search" id="button" class="button">
+                    </form>
+                    <datalist id="countries">
+                    </datalist>
+                </li>
+            </ul>
+        </div> 
+        <div class="span12 hide" id="CountryStats">
+            <div id="accepted"></div>
+            
+            <div id="countrySelected" class="grid">
+                <div class="span4" id="countryThrow"></div>
+                <div class="span4 as"><canvas id="countryChart2"></canvas></div>
+                <div class="span4 as"><canvas id="countryChart3"></canvas></div>
+                <div class="span12"><canvas id="countryChart"></canvas></div>
+                
+            </div>
+        </div>
+        <div class="span12 jc"><h3>Global Stats</h3></div>
+
+        <div class="item span12 jc ac tc">
+            <ul id="stats">
+                <li id="123">Total Cases<br></li>
+                <li id="124">Active Cases: <br></li>
+                <li id="125">Recovered: <br></li>
+                <li id="126">Tested: <br></li>
+                <li id="127">Critical Condition: <br></li>
+                <li id="128">Deaths: <br></li>
+            </ul>
+        </div>
+
+        <div class="item span12 js" style="width:100%">
+            <canvas id="gcx"></canvas>
+        </div>
+
+        <div class="span12 jc"><h3>Continents</h3></div>
+        <div class="item span12 js" style="width:100%">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="item span12 tc" id="footer">
+            Copyright © 2020-<script>document.write(new Date().getFullYear())</script> 
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+
+</html>
